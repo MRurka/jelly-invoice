@@ -1,0 +1,26 @@
+---
+layout: post
+categories: 2015
+
+title:  "Watch Interface Design"
+date:   2015-05-07
+client-id: client1
+
+invoice-number: 555000
+
+title_1: Watch Interface Design Title 1
+desc_1: Watch Interface Design Desc 1
+hours_1: 16
+rate_1: 50
+
+title_2: Watch Interface Design Title 2
+desc_2: Watch Interface Design Desc 2
+hours_2: 12
+rate_2: 50
+
+title_3: Watch Interface Design Title 3
+desc_3: Watch Interface Design Desc 3
+hours_3: 2
+rate_3: 50
+
+---

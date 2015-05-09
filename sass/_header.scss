@@ -1,0 +1,25 @@
+
+header {
+	background: #E91E63;
+	width: 100%;
+	display: inline-block;
+	padding:1em 0;
+
+	.logo {
+
+	}
+	svg {
+		fill:#fff;
+	}
+	h1 {
+		float: left;
+		font-size: 1.3em;
+		text-transform: uppercase;
+		font-weight: 300;
+		margin: 2.5em 0 .5em 0;
+		color: #fff;
+		letter-spacing: 0.2em;
+		border-left: 8px solid #fff;
+		padding: 0 0 0 .7em;
+	}
+}

@@ -1,0 +1,50 @@
+
+section.invoice {
+
+	.header {
+		padding:2em 0 0 0;
+		display: inline-block;
+		width:100%;
+		line-height: 1.5em;
+
+		h1 {
+			font-size:1.5em;
+			color:gray;
+			padding:1em 0 0 0;
+		}
+		.meta-info {
+			display: block;
+			margin:0 0 2em 0;
+		}
+		.client-info {
+			float:left;
+			width:50%;
+		}
+		.business-info {
+			float:right;
+			width:50%;
+		}
+	}
+
+	.body {
+		padding:2em 0 0 0;
+
+		table {
+			width:100%;
+
+			tr {
+				height:2em;
+			}
+			tr.bottom td {
+
+			}
+			td {
+				font-weight: 300;
+			}
+		}
+	}
+
+	.footer {
+		padding:2em 0 0 0;
+	}
+}
