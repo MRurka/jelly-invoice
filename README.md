@@ -5,7 +5,8 @@ Jekyll Based Invoicing Software for freelancers who can code a bit.
 Currently in hyper-Alfa stage.
 
 
-### Left to do
+
+#### Left to do
 - <s>Add PDF Print buttons on Index Page & Single Page</s>
 - <s>Sort by Year on Index Page</s>
 - Hide / Show invoices by year (jQuery)
