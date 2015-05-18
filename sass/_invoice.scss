@@ -7,22 +7,38 @@ section.invoice {
 		width:100%;
 		line-height: 1.5em;
 
-		h1 {
-			font-size:1.5em;
-			color:gray;
-			padding:1em 0 0 0;
-		}
-		.meta-info {
-			display: block;
-			margin:0 0 2em 0;
-		}
-		.client-info {
-			float:left;
+		.left-side {
 			width:50%;
+			float:left; 
+
+			h1 {
+				font-size:1.5em;
+				color:gray;
+				padding:1em 0 0 0;
+			}
+			.meta-info {
+				display: block;
+				margin:0 0 2em 0;
+			}
+			.client-info {
+			}
 		}
-		.business-info {
+
+		.right-side {
+			width:50%;
 			float:right;
-			width:50%;
+
+			.logo {
+				width:100px;
+
+				svg {
+					
+				}
+			}
+
+			.business-info {
+
+			}
 		}
 	}
 

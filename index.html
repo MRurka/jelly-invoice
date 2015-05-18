@@ -21,6 +21,7 @@ layout: default
                 <td class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
                 <td class="total">$<span id="grand-total-{{ post.invoice-number }}"></span></td>
                 <td class="invoice">{{ post.invoice-number }}</td>
+                <td><button class="print-btn" onclick="printPage('{{ post.url | prepend: site.baseurl }}');">Print PDF</button></td>
             </tr>
             <script>
                 var tax = 1.13;

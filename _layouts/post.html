@@ -3,17 +3,28 @@ layout: default
 ---
 <section class="invoice">
 
+    <div class="meta">
+        <button class="print-btn" onClick="window.print()">Print PDF</button>
+    </div>
     <div class="header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <div class="meta-info">
-            <span class="date"><b>Date</b> {{ page.date | date: "%B %-d, %Y" }}</span><br>
-            <span class="in"><b>Invoice #</b> {{ page.invoice-number }}</span><br>
+        <div class="left-side">
+            <h1 class="post-title">Invoice: {{ page.title }}</h1>
+            <div class="meta-info">
+                <span class="date"><b>Date</b> {{ page.date | date: "%B %-d, %Y" }}</span><br>
+                <span class="in"><b>Invoice #</b> {{ page.invoice-number }}</span>
+            </div>
+            <div class="client-info"><b>Issued to:</b><br>{% assign client-id = site.data.clients[page.client-id] %}{{ client-id.billing }}</div>
         </div>
-        <div class="client-info">
-            {% assign client-id = site.data.clients[page.client-id] %}
-            {{ client-id.billing }}
+        <div class="right-side">
+            <div class="business-info">
+                <div class="logo">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 435 303" enable-background="new 0 0 435 303" xml:space="preserve">
+                        <path d="M178.5,281l8.1,9.5h-63.5c-6.8-7.9-9.2-16.3-11.1-27.8c-1.9-11.5-0.9-25-0.9-37.3v-34.9c0-20.6-8-36-20.1-48.6,c-12.1-12.6-30.2-17.7-50.5-17.7H10.3L159.8,8c0.1,2.4,0.3,3.8,0.3,6.4c0,19.6-4.9,36.6-15.1,51.1c-10.2,14.5-24.7,26.1-44.3,34.6,c21,6.8,36.9,17.9,46,33.2c9.2,15.3,15.4,34.2,15.4,56.8v35.9c0,11.9,0.7,22.6,3.4,32C167.7,266.3,173.6,275.5,178.5,281z M378.8,241.4c-11.6,10.1-27.3,15.1-46.9,15.1c-19,0-34.1-5-45.4-15.1c-11.3-10.1-17.6-25.1-17.6-45.1V66.9L222,8.6v187.8,c0,31.5,10.1,55.8,30.4,72.8c20.3,17,46.8,25.5,79.5,25.5c33.4,0,60.4-8.5,81.1-25.4c4-3.3,7.6-6.8,10.8-10.6l-31-38.5 C389.9,228.8,385.2,235.8,378.8,241.4z"/>
+                    </svg>
+                </div>
+                {{ site.billing-address }}
+            </div>
         </div>
-        <div class="business-info">{{ site.billing-address }}</div>
     </div>
 
     <div class="body">
