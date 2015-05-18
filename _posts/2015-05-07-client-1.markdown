@@ -1,6 +1,7 @@
 ---
-layout: post
-categories: 2015
+layout: default
+tags: "2015"
+
 
 title:  "Watch Interface Design"
 date:   2015-05-07

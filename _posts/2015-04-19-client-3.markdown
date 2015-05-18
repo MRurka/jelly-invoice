@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: 2015
+tags: "2015"
 
 title:  "Editorial Illustration"
 date:   1991-11-26
