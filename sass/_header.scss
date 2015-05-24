@@ -1,9 +1,9 @@
 
 header {
-	background: #E91E63;
 	width: 100%;
 	display: inline-block;
 	padding:1em 0;
+	background: rgb(249, 249, 249);
 
 	.logo {
 
@@ -15,11 +15,17 @@ header {
 		float: left;
 		font-size: 1.3em;
 		text-transform: uppercase;
-		font-weight: 300;
+		font-weight: 600;
 		margin: 2.5em 0 .5em 0;
-		color: #fff;
+		color: #636B71;
 		letter-spacing: 0.2em;
-		border-left: 8px solid #fff;
+		border-left: 8px solid #EF4A69;
 		padding: 0 0 0 .7em;
+
+		span {
+			font-weight: 300;
+			text-transform: none;
+			letter-spacing: initial;
+		}
 	}
 }

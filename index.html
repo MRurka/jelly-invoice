@@ -11,52 +11,53 @@ layout: default
 {% endcapture %}
 {% assign sortedtags = tags | split:' ' | sort: 'date' %}
 
-{% for tag in sortedtags %}
-    <section>
-        <h3 class="year" id="{{ tag }}">{{ tag }}</h3>
-        <table>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Client</th>
+            <th>Work</th>
+            <th style="text-align:right">Grand Total</th>
+            <th style="text-align:right">Invoice #</th>
+            <th  style="text-align:right">Export</th>
+        </tr>
+    {% for tag in sortedtags %}
+        <tr>
+            <td><h3 class="year" id="{{ tag }}">{{ tag }}</h3></td>
+        </tr>
+        {% for post in site.tags[tag] %} 
             <tr>
-                <th>Date</th>
-                <th>Client</th>
-                <th>Work</th>
-                <th>Grand Total</th>
-                <th>Invoice #</th>
+                <td class="date">{{ post.date | date: "%b %-d, %Y" }}</td>
+                <td class="client">{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.name }}</td>
+                <td class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+                <td style="text-align:right"class="total">$<span id="grand-total-{{ post.invoice-number }}"></span></td>
+                <td style="text-align:right"class="invoice">{{ post.invoice-number }}</td>
+                <td style="text-align:right"><a class="print-btn" onclick="printPage('{{ post.url | prepend: site.baseurl }}');">PDF</a></td>
             </tr>
-            {% for post in site.tags[tag] %} 
-                <tr>
-                    <td class="date">{{ post.date | date: "%b %-d, %Y" }}</td>
-                    <td class="client">{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.name }}</td>
-                    <td class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
-                    <td class="total">$<span id="grand-total-{{ post.invoice-number }}"></span></td>
-                    <td class="invoice">{{ post.invoice-number }}</td>
-                    <td><button class="print-btn" onclick="printPage('{{ post.url | prepend: site.baseurl }}');">Print PDF</button></td>
-                </tr>
-                <script>
-                    var tax = 1.13;
-                    var total_1 = 0;
-                    var total_2 = 0;
-                    var total_3 = 0;
-                    var total_4 = 0;
-                    var total_5 = 0;
-                    var total_6 = 0;
-                    var total_7 = 0;
-                    var total_8 = 0;
-                    var total_9 = 0;
-                    {% if post.title_1 %} var total_1 = ( ( {{ post.rate_1 }} * {{ post.hours_1 }} ) * tax ); {% endif %}
-                    {% if post.title_2 %} var total_2 = ( ( {{ post.rate_2 }} * {{ post.hours_2 }} ) * tax ); {% endif %}
-                    {% if post.title_3 %} var total_3 = ( ( {{ post.rate_3 }} * {{ post.hours_3 }} ) * tax ); {% endif %}
-                    {% if post.title_4 %} var total_4 = ( ( {{ post.rate_4 }} * {{ post.hours_4 }} ) * tax ); {% endif %}
-                    {% if post.title_5 %} var total_5 = ( ( {{ post.rate_5 }} * {{ post.hours_5 }} ) * tax ); {% endif %}
-                    {% if post.title_6 %} var total_6 = ( ( {{ post.rate_6 }} * {{ post.hours_6 }} ) * tax ); {% endif %}
-                    {% if post.title_7 %} var total_7 = ( ( {{ post.rate_7 }} * {{ post.hours_7 }} ) * tax ); {% endif %}
-                    {% if post.title_8 %} var total_8 = ( ( {{ post.rate_8 }} * {{ post.hours_8 }} ) * tax ); {% endif %}
-                    {% if post.title_9 %} var total_9 = ( ( {{ post.rate_9 }} * {{ post.hours_9 }} ) * tax ); {% endif %}
-                    var grand_total = ( total_1 + total_2 + total_3 + total_4 + total_5 + total_6 + total_7 + total_8 + total_9 );
-                    document.getElementById("grand-total-{{ post.invoice-number }}").innerHTML = grand_total.toFixed(2);;
-                </script>
-            {% endfor %}
-        </table>
-    </section>
-{% endfor %}  
+            <script>
+                var tax = 1.13;
+                var total_1 = 0;
+                var total_2 = 0;
+                var total_3 = 0;
+                var total_4 = 0;
+                var total_5 = 0;
+                var total_6 = 0;
+                var total_7 = 0;
+                var total_8 = 0;
+                var total_9 = 0;
+                {% if post.title_1 %} var total_1 = ( ( {{ post.rate_1 }} * {{ post.hours_1 }} ) * tax ); {% endif %}
+                {% if post.title_2 %} var total_2 = ( ( {{ post.rate_2 }} * {{ post.hours_2 }} ) * tax ); {% endif %}
+                {% if post.title_3 %} var total_3 = ( ( {{ post.rate_3 }} * {{ post.hours_3 }} ) * tax ); {% endif %}
+                {% if post.title_4 %} var total_4 = ( ( {{ post.rate_4 }} * {{ post.hours_4 }} ) * tax ); {% endif %}
+                {% if post.title_5 %} var total_5 = ( ( {{ post.rate_5 }} * {{ post.hours_5 }} ) * tax ); {% endif %}
+                {% if post.title_6 %} var total_6 = ( ( {{ post.rate_6 }} * {{ post.hours_6 }} ) * tax ); {% endif %}
+                {% if post.title_7 %} var total_7 = ( ( {{ post.rate_7 }} * {{ post.hours_7 }} ) * tax ); {% endif %}
+                {% if post.title_8 %} var total_8 = ( ( {{ post.rate_8 }} * {{ post.hours_8 }} ) * tax ); {% endif %}
+                {% if post.title_9 %} var total_9 = ( ( {{ post.rate_9 }} * {{ post.hours_9 }} ) * tax ); {% endif %}
+                var grand_total = ( total_1 + total_2 + total_3 + total_4 + total_5 + total_6 + total_7 + total_8 + total_9 );
+                document.getElementById("grand-total-{{ post.invoice-number }}").innerHTML = grand_total.toFixed(2);;
+            </script>
+        {% endfor %}
+    {% endfor %}
+</table>  
 
 </div>
