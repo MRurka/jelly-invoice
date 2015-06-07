@@ -1,10 +1,13 @@
 # Site settings
-title: Jelly Invoice
-email: michael@rurkadesign.com
-
-business-name: "Rurka Design"
-business-number: "RUD3-551991"
-billing-address: "Michael Rurka <br>1991 November Dr, <br>Suite 11-26, <br>Canada, NB <br>Business Number: RUD3-551991"
-
+title: Rude Invoicing
 baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog
 url: "http://mrurka.github.io" # the base hostname & protocol for your site
+
+# Business Info
+business-name: "Rurka Design"
+business-number: "RUD3-551991"
+billing-address: "Michael Rurka <br>1991 November Dr <br>Suite 11-26 <br>Canada, NB <br>BN: RUD3-551991"
+email: michael@rurkadesign.com
+
+# Other
+tax: 0.13

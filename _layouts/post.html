@@ -2,106 +2,90 @@
 layout: default
 ---
 
-<section class="invoice">
+<div class="invoice">
 
-    <div class="meta">
-        <button class="print-btn" onClick="window.print()">Print PDF</button>
-    </div>
-    <div class="header">
-        <div class="left-side">
-            <h1 class="post-title">Invoice: {{ page.title }}</h1>
-            <div class="meta-info">
-                <span class="date"><b>Date</b> {{ page.date | date: "%B %-d, %Y" }}</span><br>
-                <span class="in"><b>Invoice #</b> {{ page.invoice-number }}</span>
-            </div>
-            <div class="client-info"><b>Issued to:</b><br>{% assign client-id = site.data.clients[page.client-id] %}{{ client-id.billing }}</div>
-        </div>
-        <div class="right-side">
-            <div class="business-info">
-                <div class="logo">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 435 303" enable-background="new 0 0 435 303" xml:space="preserve">
-                        <path d="M178.5,281l8.1,9.5h-63.5c-6.8-7.9-9.2-16.3-11.1-27.8c-1.9-11.5-0.9-25-0.9-37.3v-34.9c0-20.6-8-36-20.1-48.6,c-12.1-12.6-30.2-17.7-50.5-17.7H10.3L159.8,8c0.1,2.4,0.3,3.8,0.3,6.4c0,19.6-4.9,36.6-15.1,51.1c-10.2,14.5-24.7,26.1-44.3,34.6,c21,6.8,36.9,17.9,46,33.2c9.2,15.3,15.4,34.2,15.4,56.8v35.9c0,11.9,0.7,22.6,3.4,32C167.7,266.3,173.6,275.5,178.5,281z M378.8,241.4c-11.6,10.1-27.3,15.1-46.9,15.1c-19,0-34.1-5-45.4-15.1c-11.3-10.1-17.6-25.1-17.6-45.1V66.9L222,8.6v187.8,c0,31.5,10.1,55.8,30.4,72.8c20.3,17,46.8,25.5,79.5,25.5c33.4,0,60.4-8.5,81.1-25.4c4-3.3,7.6-6.8,10.8-10.6l-31-38.5 C389.9,228.8,385.2,235.8,378.8,241.4z"/>
-                    </svg>
+    <button class="print-btn" onClick="window.print()">Print PDF</button>
+
+    <section class="header">
+        <div class="container">
+            <div class="top">
+                <div class="summary">
+                    <h1>Invoice</h1>
+                    <span class="for"><span>For</span> {{ page.title }}</span>
+                    <span class="to"><span>Issued to</span> {% assign client-id = site.data.clients[page.client-id] %}{{ client-id.name }}</span>
+                    <span class="from"><span>By</span> {{ site.business-name }}</span>
                 </div>
-                {{ site.billing-address }}
+                <div class="meta">
+                    <span class="date">{{ page.date | date: "%B %-d, %Y" }}</span><br>
+                    <span class="in">Invoice # {{ page.invoice-number }}</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="from">{{ site.billing-address }}</div>
+                <div class="to">{% assign client-id = site.data.clients[page.client-id] %}{{ client-id.billing }}</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="body">
-        <table>
-            <tr>
-                <th width="55%">Item</th>
-                <th width="15%">Hours</th>
-                <th width="15%">Rate</th>
-                <th width="15%">Total</th>
-            </tr>
-            {% if page.title_1 %}
-                <tr>
-                    <td>{{ page.title_1 }}</td>
-                    <td>{{ page.hours_1 }}</td>
-                    <td>${{ page.rate_1 }}/h</td>
-                    <td>$<span id="total-1"></span></td>
-                    <script> var total_1 = {{ page.rate_1 }} * {{ page.hours_1 }} ; document.getElementById("total-1").innerHTML = total_1;</script>
-                </tr>
-            {% endif %}
-            {% if page.title_2 %}
-                <tr>
-                    <td>{{ page.title_2 }}</td>
-                    <td>{{ page.hours_2 }}</td>
-                    <td>${{ page.rate_2 }}/h</td>
-                    <td>$<span id="total-2"></span></td>
-                    <script> var total_2 = {{ page.rate_2 }} * {{ page.hours_2 }} ; document.getElementById("total-2").innerHTML = total_2;</script>
-                </tr>
-            {% endif %}
-            {% if page.title_3 %}
-                <tr>
-                    <td>{{ page.title_3 }}</td>
-                    <td>{{ page.hours_3 }}</td>
-                    <td>${{ page.rate_3 }}/h</td>
-                    <td>$<span id="total-3"></span></td>
-                    <script> var total_3 = {{ page.rate_3 }} * {{ page.hours_3 }} ; document.getElementById("total-3").innerHTML = total_3;</script>
-                </tr>
-            {% endif %}
-            <!--
+    <section class="body">
+        <div class="container">
+            <table>
+                {% if page.item_1 %}
+                    <tr>
+                        <td style="width:80%;">{{ page.item_1 }}</td>
+                        <td style="width:20%; text-align:right;">$<span id="total-1"></span></td>
+                        <script> var total_1 = {{ page.rate_1 }} * {{ page.hours_1 }} ; document.getElementById("total-1").innerHTML = total_1;</script>
+                    </tr>
+                {% endif %}
+                {% if page.item_2 %}
+                    <tr>
+                        <td>{{ page.item_2 }}</td>
+                        <td style="text-align:right;">$<span id="total-2"></span></td>
+                        <script> var total_2 = {{ page.rate_2 }} * {{ page.hours_2 }} ; document.getElementById("total-2").innerHTML = total_2;</script>
+                    </tr>
+                {% endif %}
+                {% if page.item_3 %}
+                    <tr>
+                        <td>{{ page.item_3 }}</td>
+                        <td style="text-align:right;">$<span id="total-3"></span></td>
+                        <script> var total_3 = {{ page.rate_3 }} * {{ page.hours_3 }} ; document.getElementById("total-3").innerHTML = total_3;</script>
+                    </tr>
+                {% endif %}
+                <!--
 
-                /
+                    /
 
-            -->
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><b>Subtotal</b></td>
-                <td>$<span id="subtotal"></span></td>
-                <script> 
-                    var subtotal = total_1 {% if page.title_2 %} + total_2 {% endif %} {% if page.title_3 %} + total_3 {% endif %} ; document.getElementById("subtotal").innerHTML = subtotal.toFixed(2);
-                </script>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><b>HST (13%)</b></td>
-                <td>$<span id="tax"></span></td>
-                <script> var tax = subtotal * 0.13 ; document.getElementById("tax").innerHTML = tax.toFixed(2);</script>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><b>Grand Total</b></td>
-                <td>$<span id="grand-total"></span></td>
-                <script> var grand_total = subtotal + tax ; document.getElementById("grand-total").innerHTML = grand_total.toFixed(2);</script>
-            </tr>
-        </table>
-    </div>
+                -->
+            </table>
+        </div>
+    </section>
 
-    <div class="footer">
-
-    </div>
+    <section class="footer">
+        <div class="container">
+            <div class="notes">
+                <h5>Notes</h5>
+                <p>{{ content }}</p>
+            </div>
+            <div class="totals">
+                <table>
+                    <tr>
+                        <td><b>Subtotal</b></td>
+                        <td style="text-align:right;">$<span id="subtotal"></span></td>
+                        <script>var subtotal = total_1 {% if page.item_2 %} + total_2 {% endif %} {% if page.item_3 %} + total_3 {% endif %} ; document.getElementById("subtotal").innerHTML = subtotal.toFixed(2);</script>
+                    </tr>
+                    <tr>
+                        <td><b>HST (13%)</b></td>
+                        <td style="text-align:right;">$<span id="tax"></span></td>
+                        <script> var tax = subtotal * 0.13 ; document.getElementById("tax").innerHTML = tax.toFixed(2);</script>
+                    </tr>
+                    <tr>
+                        <td><b>Grand Total</b></td>
+                        <td style="text-align:right;">$<span id="grand-total"></span></td>
+                        <script> var grand_total = subtotal + tax ; document.getElementById("grand-total").innerHTML = grand_total.toFixed(2);</script>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
 
 </div>

@@ -8,17 +8,17 @@ client-id: client2
 
 invoice-number: 333000
 
-title_1: Website Design & Development Title 1
+item_1: Website Design & Development Title 1
 desc_1: Website Design & Development Desc 1
 hours_1: 12
 rate_1: 30
 
-title_2: Website Design & Development Title 2
+item_2: Website Design & Development Title 2
 desc_2: Website Design & Development Desc 2
 hours_2: 13
 rate_2: 20
 
-title_3: Website Design & Development Title 3
+item_3: Website Design & Development Title 3
 desc_3: Website Design & Development Desc 3
 hours_3: 4
 rate_3: 100
