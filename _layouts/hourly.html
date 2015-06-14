@@ -1,0 +1,131 @@
+---
+layout: default
+---
+
+<div class="invoice-page">
+
+    <button class="print-btn" onClick="window.print()">Export PDF</button>
+
+    <section class="header">
+        <div class="container">
+            <div class="top">
+                <div class="summary">
+                    <h1>Invoice</h1>
+                    <span class="for"><span>For</span> {{ page.title }}</span>
+                    <span class="to"><span>Issued to</span> {% assign client-id = site.data.clients[page.client-id] %}{{ client-id.name }}</span>
+                    <span class="from"><span>By</span> {{ site.business-name }}</span>
+                </div>
+                <div class="meta">
+                    <span class="date">{{ page.date | date: "%B %-d, %Y" }}</span><br>
+                    <span class="in">Invoice # {{ page.invoice-number }}</span>
+                </div>
+            </div>
+            <div class="legend">
+                <div class="from">{{ site.billing-address }}</div>
+                <div class="to">{% assign client-id = site.data.clients[page.client-id] %}{{ client-id.billing }}</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="body">
+        <div class="container">
+            <table>
+                <tr>
+                    <th class="item">Item{% if page.item_2 or page.item_3 or page.item_4 or page.item_5 %}s{% endif %}</th>
+                    <th class="hours">Hours</th>
+                    <th class="value">@ ${{ page.rate }}/h</th>
+                </tr>
+                {% if page.item_1 %}
+                    <tr>
+                        <td class="item">{{ page.item_1 }} {% if page.note_1 %}<sup class="note-symbol one"></sup>{% endif %}</td>
+                        <td class="hours">{{ page.hours_1 }}</td>
+                        <td class="value"><span id="total-1"></span></td>
+                        <script> var total_1 = {{ page.rate }} * {{ page.hours_1 }} ; document.getElementById("total-1").innerHTML = total_1;</script>
+                    </tr>
+                {% endif %}
+                {% if page.item_2 %}
+                    <tr>
+                        <td class="item">{{ page.item_2 }} {% if page.note_2 %}<sup class="note-symbol two"></sup>{% endif %}</td>
+                        <td class="hours">{{ page.hours_2 }}</td>
+                        <td class="value"><span id="total-2"></span></td>
+                        <script> var total_2 = {{ page.rate }} * {{ page.hours_2 }} ; document.getElementById("total-2").innerHTML = total_2;</script>
+                    </tr>
+                {% endif %}
+                {% if page.item_3 %}
+                    <tr>
+                        <td class="item">{{ page.item_3 }} {% if page.note_3 %}<sup class="note-symbol three"></sup>{% endif %}</td>
+                        <td class="hours">{{ page.hours_3 }}</td>
+                        <td class="value"><span id="total-3"></span></td>
+                        <script> var total_3 = {{ page.rate }} * {{ page.hours_3 }} ; document.getElementById("total-3").innerHTML = total_3;</script>
+                    </tr>
+                {% endif %}
+                {% if page.item_4 %}
+                    <tr>
+                        <td class="item">{{ page.item_4 }} {% if page.note_4 %}<sup class="note-symbol four"></sup>{% endif %}</td>
+                        <td class="hours">{{ page.hours_4 }}</td>
+                        <td class="value"><span id="total-4"></span></td>
+                        <script> var total_4 = {{ page.rate }} * {{ page.hours_4 }} ; document.getElementById("total-4").innerHTML = total_4;</script>
+                    </tr>
+                {% endif %}
+                {% if page.item_5 %}
+                    <tr>
+                        <td class="item">{{ page.item_5 }} {% if page.note_5 %}<sup class="note-symbol five"></sup>{% endif %}</td>
+                        <td class="hours">{{ page.hours_5 }}</td>
+                        <td class="value"><span id="total-5"></span></td>
+                        <script> var total_5 = {{ page.rate }} * {{ page.hours_5 }} ; document.getElementById("total-5").innerHTML = total_5;</script>
+                    </tr>
+                {% endif %}
+            </table>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="container">
+            <div class="notes">
+                {% if page.note_1 or page.note_2 or page.note_3 or page.note_4 or page.note_5 %}
+                    <h5>Notes</h5>
+                    <ul>
+                        {% if page.note_1 %}<li><span class="note-symbol one"></span>{{ page.note_1 }}</li>{% endif %}
+                        {% if page.note_2 %}<li><span class="note-symbol two"></span>{{ page.note_2 }}</li>{% endif %}
+                        {% if page.note_3 %}<li><span class="note-symbol three"></span>{{ page.note_3 }}</li>{% endif %}
+                        {% if page.note_4 %}<li><span class="note-symbol four"></span>{{ page.note_4 }}</li>{% endif %}
+                        {% if page.note_5 %}<li><span class="note-symbol five"></span>{{ page.note_5 }}</li>{% endif %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="totals">
+                <table>
+                    <tr>
+                        <td><b>Subtotal</b></td>
+                        <td style="text-align:right;">$<span id="subtotal"></span></td>
+                        <script> 
+                            var subtotal = total_1 
+                            {% if page.item_2 %} + total_2 {% endif %} 
+                            {% if page.item_3 %} + total_3 {% endif %}  
+                            {% if page.item_4 %} + total_4 {% endif %}  
+                            {% if page.item_5 %} + total_5 {% endif %}; 
+                            document.getElementById("subtotal").innerHTML = subtotal.toFixed(2);
+                        </script>
+                    </tr>
+                    <tr>
+                        <td><b>HST (13%)</b></td>
+                        <td style="text-align:right;">$<span id="tax"></span></td>
+                        <script> 
+                            var tax = subtotal * {{ site.tax }}; 
+                            document.getElementById("tax").innerHTML = tax.toFixed(2);
+                        </script>
+                    </tr>
+                    <tr>
+                        <td><b>Grand Total</b></td>
+                        <td style="text-align:right;">$<span id="grand-total"></span></td>
+                        <script> 
+                            var grand_total = subtotal + tax; 
+                            document.getElementById("grand-total").innerHTML = grand_total.toFixed(2);
+                        </script>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+</div>

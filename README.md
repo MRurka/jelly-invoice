@@ -1,5 +1,5 @@
 # Jelly Invoice
 
-Jekyll Based Invoicing Software for freelancers who can code a bit. 
+Jekyll Based Invoicing Software for designer/developer freelancers who need a fully customizable and brandable, efficient solution to generating invoices.
 
-Currently in hyper-Alfa stage.
+Stay tuned <3

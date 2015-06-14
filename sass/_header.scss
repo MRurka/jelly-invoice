@@ -1,25 +1,45 @@
 
 header {
-	background: #E91E63;
 	width: 100%;
-	display: inline-block;
+	float:left;
 	padding:1em 0;
+	background: rgb(44, 48, 60);
+	border-bottom:1px solid rgb(87, 96, 119);
 
-	.logo {
-
-	}
-	svg {
-		fill:#fff;
+	.logo { 
+		float:left;
+		svg {
+			fill:#EF4A69;
+			width:70px;
+			margin:10px 0 0 0;
+		}
 	}
 	h1 {
 		float: left;
 		font-size: 1.3em;
 		text-transform: uppercase;
 		font-weight: 300;
-		margin: 2.5em 0 .5em 0;
-		color: #fff;
+		color: #636B71;
 		letter-spacing: 0.2em;
-		border-left: 8px solid #fff;
-		padding: 0 0 0 .7em;
+
+		span {
+			font-weight: 300;
+			text-transform: none;
+			letter-spacing: initial;
+		}
+	}
+
+	.print-btn {
+		position: absolute;
+		right: 5%;
+		color: #29ABE5;
+		background: none;
+		font-size: .7em;
+		top: 5em;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		border: 2px solid rgb(41, 171, 229);
+		padding: 10px 17px 8px;
 	}
 }

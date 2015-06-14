@@ -1,9 +1,18 @@
 # Site settings
-title: Jelly Invoice (Alfa)
+title: Rude Invoicing
+baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog
+url: "http://mrurka.github.io" # the base hostname & protocol for your site
+
+# Business Info
+business-name: "Rurka Design"
+business-number: "RUD3-551991"
+billing-address: "Michael Rurka <br>1991 November Dr <br>Suite 11-26 <br>Canada, NB <br>BN: RUD3-551991"
 email: michael@rurkadesign.com
 
-billing-address: "<b>Michael Rurka</b> <br>1991 November Dr, <br>Suite 11-26, <br>Canada, NB <br>Business Number: RUD3-551991"
-business-number: "RUD3-551991"
-
+<<<<<<< HEAD
 baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog/
 url: "http://mrurka.github.io/" # the base hostname & protocol for your site
+=======
+# Other
+tax: 0.13
+>>>>>>> master
