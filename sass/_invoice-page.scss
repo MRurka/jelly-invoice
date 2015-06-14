@@ -117,10 +117,20 @@ $c-header-bg : rgb(44, 48, 60);
 
 			tr {
 				height:2em;
-				border-bottom: 1px solid #E8E8E8;
 			}
-			tr:last-child {
-				border:none;
+			th {
+				font-size: .65em;
+				text-transform: uppercase;
+				letter-spacing: .3em;
+				color: rgb(197, 203, 206);
+				padding: 1em 0 0 0;
+
+				&.hours {
+					text-align: right;
+				}
+				&.value {
+					text-align: right;
+				}
 			}
 			td {
 				font-weight: 400;
@@ -128,6 +138,7 @@ $c-header-bg : rgb(44, 48, 60);
 				padding: 2.3em 0 2em;
 				color: #7C8790;
 				letter-spacing: 0.03em;
+				border-bottom: 1px solid #E8E8E8;
 
 				&.item {
 					width: 80%;
@@ -136,6 +147,9 @@ $c-header-bg : rgb(44, 48, 60);
 					width: 20%;
 					text-align: right;
 				}
+			}
+			td:last-child {
+				border:none;
 			}
 		}
 	}

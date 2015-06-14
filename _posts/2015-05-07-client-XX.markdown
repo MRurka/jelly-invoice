@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: hourly
 tags: "2013"
 
 title:  "Webvelopment"
@@ -8,19 +8,15 @@ client-id: client1
 
 invoice-number: 11000
 
+rate: 10
+
 item_1: W & Develont Title 1
-desc_1: Website Design & Development Desc 1
 hours_1: 132
-rate_1: 320
 
 item_2: Website Desivelopment Title 2
-desc_2: Website Dlopment Desc 2
 hours_2: 133
-rate_2: 220
 
 item_3: Website D Development Title 3
-desc_3: Website Desigelopment Desc 3
 hours_3: 43
-rate_3: 1020
 
 ---

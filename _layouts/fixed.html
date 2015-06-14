@@ -34,35 +34,35 @@ layout: default
                     <tr>
                         <td class="item">{{ page.item_1 }} {% if page.note_1 %}<sup class="note-symbol one"></sup>{% endif %}</td>
                         <td class="value"><span id="total-1"></span></td>
-                        <script> var total_1 = {{ page.rate_1 }} * {{ page.hours_1 }} ; document.getElementById("total-1").innerHTML = total_1;</script>
+                        <script> var total_1 = {{ page.price_1 }} ; document.getElementById("total-1").innerHTML = total_1;</script>
                     </tr>
                 {% endif %}
                 {% if page.item_2 %}
                     <tr>
                         <td class="item">{{ page.item_2 }} {% if page.note_2 %}<sup class="note-symbol two"></sup>{% endif %}</td>
                         <td class="value"><span id="total-2"></span></td>
-                        <script> var total_2 = {{ page.rate_2 }} * {{ page.hours_2 }} ; document.getElementById("total-2").innerHTML = total_2;</script>
+                        <script> var total_2 = {{ page.price_2 }} ; document.getElementById("total-2").innerHTML = total_2;</script>
                     </tr>
                 {% endif %}
                 {% if page.item_3 %}
                     <tr>
                         <td class="item">{{ page.item_3 }} {% if page.note_3 %}<sup class="note-symbol three"></sup>{% endif %}</td>
                         <td class="value"><span id="total-3"></span></td>
-                        <script> var total_3 = {{ page.rate_3 }} * {{ page.hours_3 }} ; document.getElementById("total-3").innerHTML = total_3;</script>
+                        <script> var total_3 = {{ page.price_3 }} ; document.getElementById("total-3").innerHTML = total_3;</script>
                     </tr>
                 {% endif %}
                 {% if page.item_4 %}
                     <tr>
                         <td class="item">{{ page.item_4 }} {% if page.note_4 %}<sup class="note-symbol four"></sup>{% endif %}</td>
                         <td class="value"><span id="total-4"></span></td>
-                        <script> var total_4 = {{ page.rate_4 }} * {{ page.hours_4 }} ; document.getElementById("total-4").innerHTML = total_4;</script>
+                        <script> var total_4 = {{ page.price_4 }} ; document.getElementById("total-4").innerHTML = total_4;</script>
                     </tr>
                 {% endif %}
                 {% if page.item_5 %}
                     <tr>
                         <td class="item">{{ page.item_5 }} {% if page.note_5 %}<sup class="note-symbol five"></sup>{% endif %}</td>
                         <td class="value"><span id="total-5"></span></td>
-                        <script> var total_5 = {{ page.rate_5 }} * {{ page.hours_5 }} ; document.getElementById("total-5").innerHTML = total_5;</script>
+                        <script> var total_5 = {{ page.price_5 }} ; document.getElementById("total-5").innerHTML = total_5;</script>
                     </tr>
                 {% endif %}
             </table>
@@ -72,14 +72,16 @@ layout: default
     <section class="footer">
         <div class="container">
             <div class="notes">
-                <h5>Notes</h5>
-                <ul>
-                    {% if page.note_1 %}<li><span class="note-symbol one"></span>{{ page.note_1 }}</li>{% endif %}
-                    {% if page.note_2 %}<li><span class="note-symbol two"></span>{{ page.note_2 }}</li>{% endif %}
-                    {% if page.note_3 %}<li><span class="note-symbol three"></span>{{ page.note_3 }}</li>{% endif %}
-                    {% if page.note_4 %}<li><span class="note-symbol four"></span>{{ page.note_4 }}</li>{% endif %}
-                    {% if page.note_5 %}<li><span class="note-symbol five"></span>{{ page.note_5 }}</li>{% endif %}
-                </ul>
+                {% if page.note_1 or page.note_2 or page.note_3 or page.note_4 or page.note_5 %}
+                    <h5>Notes</h5>
+                    <ul>
+                        {% if page.note_1 %}<li><span class="note-symbol one"></span>{{ page.note_1 }}</li>{% endif %}
+                        {% if page.note_2 %}<li><span class="note-symbol two"></span>{{ page.note_2 }}</li>{% endif %}
+                        {% if page.note_3 %}<li><span class="note-symbol three"></span>{{ page.note_3 }}</li>{% endif %}
+                        {% if page.note_4 %}<li><span class="note-symbol four"></span>{{ page.note_4 }}</li>{% endif %}
+                        {% if page.note_5 %}<li><span class="note-symbol five"></span>{{ page.note_5 }}</li>{% endif %}
+                    </ul>
+                {% endif %}
             </div>
             <div class="totals">
                 <table>

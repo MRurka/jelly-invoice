@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: fixed
 tags: "2015"
 
 title:  "Website Design & Development"
@@ -9,18 +9,12 @@ client-id: client2
 invoice-number: 333000
 
 item_1: Website Design & Development Title 1
-desc_1: Website Design & Development Desc 1
-hours_1: 12
-rate_1: 30
+price_1: 100
 
 item_2: Website Design & Development Title 2
-desc_2: Website Design & Development Desc 2
-hours_2: 13
-rate_2: 20
+price_2: 2
 
 item_3: Website Design & Development Title 3
-desc_3: Website Design & Development Desc 3
-hours_3: 4
-rate_3: 100
+price_3: 43
 
 ---

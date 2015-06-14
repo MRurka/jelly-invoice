@@ -1,21 +1,17 @@
 ---
-layout: post
+layout: fixed
 tags: "2015"
 
-title:  "Editorial Illustration"
+title:  "Editorial Illustration (Fixed Price)"
 date:   1991-11-26
 client-id: client3
 
 invoice-number: 999000
 
 item_1: Editorial Illustration 1
-desc_1: Editorial Illustration 1
-hours_1: 8
-rate_1: 15
+price_1: 101
 
 item_2: Editorial Illustration 2
-desc_2: Editorial Illustration 2
-hours_2: 10
-rate_2: 12
+price_2: 202
 
 ---
