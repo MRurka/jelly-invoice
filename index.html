@@ -45,18 +45,21 @@ layout: default
                         var total_7 = 0;
                         var total_8 = 0;
                         var total_9 = 0;
-                        {% if site.tax %} var tax = ( {{ site.tax }} + 1 ) ; {% endif %}
-                        {% if post.item_1 %} var total_1 = ( ( {{ post.rate_1 }} * {{ post.hours_1 }} ) * tax ); {% endif %}
-                        {% if post.item_2 %} var total_2 = ( ( {{ post.rate_2 }} * {{ post.hours_2 }} ) * tax ); {% endif %}
-                        {% if post.item_3 %} var total_3 = ( ( {{ post.rate_3 }} * {{ post.hours_3 }} ) * tax ); {% endif %}
-                        {% if post.item_4 %} var total_4 = ( ( {{ post.rate_4 }} * {{ post.hours_4 }} ) * tax ); {% endif %}
-                        {% if post.item_5 %} var total_5 = ( ( {{ post.rate_5 }} * {{ post.hours_5 }} ) * tax ); {% endif %}
-                        {% if post.item_6 %} var total_6 = ( ( {{ post.rate_6 }} * {{ post.hours_6 }} ) * tax ); {% endif %}
-                        {% if post.item_7 %} var total_7 = ( ( {{ post.rate_7 }} * {{ post.hours_7 }} ) * tax ); {% endif %}
-                        {% if post.item_8 %} var total_8 = ( ( {{ post.rate_8 }} * {{ post.hours_8 }} ) * tax ); {% endif %}
-                        {% if post.item_9 %} var total_9 = ( ( {{ post.rate_9 }} * {{ post.hours_9 }} ) * tax ); {% endif %}
-                        var grand_total = ( total_1 + total_2 + total_3 + total_4 + total_5 + total_6 + total_7 + total_8 + total_9 );
-                        document.getElementById("grand-total-{{ post.invoice-number }}").innerHTML = grand_total.toFixed(2);;
+
+                        {% if site.tax %} tax = {{ site.tax }} + 1; {% endif %}
+                        {% if post.item_1 %} total_1 = (({{ post.rate_1 }} * {{ post.hours_1 }}) * tax); {% endif %}
+                        {% if post.item_2 %} total_2 = (({{ post.rate_2 }} * {{ post.hours_2 }}) * tax); {% endif %}
+                        {% if post.item_3 %} total_3 = (({{ post.rate_3 }} * {{ post.hours_3 }}) * tax); {% endif %}
+                        {% if post.item_4 %} total_4 = (({{ post.rate_4 }} * {{ post.hours_4 }}) * tax); {% endif %}
+                        {% if post.item_5 %} total_5 = (({{ post.rate_5 }} * {{ post.hours_5 }}) * tax); {% endif %}
+                        {% if post.item_6 %} total_6 = (({{ post.rate_6 }} * {{ post.hours_6 }}) * tax); {% endif %}
+                        {% if post.item_7 %} total_7 = (({{ post.rate_7 }} * {{ post.hours_7 }}) * tax); {% endif %}
+                        {% if post.item_8 %} total_8 = (({{ post.rate_8 }} * {{ post.hours_8 }}) * tax); {% endif %}
+                        {% if post.item_9 %} total_9 = (({{ post.rate_9 }} * {{ post.hours_9 }}) * tax); {% endif %}
+
+                        var grand_total = total_1 + total_2 + total_3 + total_4 + total_5 + total_6 + total_7 + total_8 + total_9;
+
+                        document.getElementById('grand-total-{{ post.invoice-number }}').innerHTML = grand_total.toFixed(2);
                     </script>
                 {% endfor %}
             {% endfor %}

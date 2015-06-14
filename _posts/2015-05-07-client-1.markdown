@@ -2,7 +2,6 @@
 layout: post
 tags: "2015"
 
-
 title:  "Watch Interface Design"
 date:   2015-05-07
 client-id: client1
@@ -11,6 +10,7 @@ invoice-number: 555000
 
 item_1: Watch Interface Design Title 1
 desc_1: Watch Interface Design Desc 1
+note_1: Great job on the thing mate! 
 hours_1: 16
 rate_1: 50
 
@@ -21,6 +21,7 @@ rate_2: 50
 
 item_3: Watch Interface Design Title 3
 desc_3: Watch Interface Design Desc 3
+note_3: Included collaborations with Tom at Tim's Lab. Meetings Included in price.
 hours_3: 2
 rate_3: 50
 

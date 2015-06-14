@@ -1,21 +1,21 @@
 
-$c-red : #EF4A69;
+$c-main : #EF4A69;
 $c-gray-blue : rgb(87, 96, 119);
 $c-header-bg : rgb(44, 48, 60);
 
-.invoice {
+.invoice-page {
 
 	.print-btn {
 		position: absolute;
 		right: 5%;
-		color: $c-red;
+		color: $c-main;
 		background: none;
 		font-size: .7em;
 		top: 5em;
 		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 3px;
-		border: 1px solid $c-red;
+		border: 1px solid $c-main;
 		padding: 10px 17px 8px;
 	}
 
@@ -59,7 +59,7 @@ $c-header-bg : rgb(44, 48, 60);
 
 					&.to:after, &.from:after {
 						content:"+";
-						color:$c-red;
+						color:$c-main;
 						padding: 0 0 0 .5em;
 						letter-spacing: .5em;
 						font-weight: 600;
@@ -80,10 +80,9 @@ $c-header-bg : rgb(44, 48, 60);
 				font-weight: 300;
 				letter-spacing: .03em;
 			}
-
-
 		}
-		.bottom {
+
+		.legend {
 			float:left;
 			width:100%;
 
@@ -99,7 +98,7 @@ $c-header-bg : rgb(44, 48, 60);
 				&.to:before, &.from:before {
 					content:"+";
 					display: block;
-					color:$c-red;
+					color:$c-main;
 					letter-spacing: .5em;
 					font-weight: 600;
 				}
@@ -111,14 +110,14 @@ $c-header-bg : rgb(44, 48, 60);
 	}
 
 	section.body {
-		padding:2em 0;
+		padding: 1em 0 2em;
 
 		table {
 			width:100%;
 
 			tr {
 				height:2em;
-				border-bottom:1px solid rgb(215, 213, 213);
+				border-bottom: 1px solid #E8E8E8;
 			}
 			tr:last-child {
 				border:none;
@@ -126,31 +125,66 @@ $c-header-bg : rgb(44, 48, 60);
 			td {
 				font-weight: 400;
 				font-size: .7em;
-				padding: 1.5em 0;
-				color:#333;
+				padding: 2.3em 0 2em;
+				color: #7C8790;
 				letter-spacing: 0.03em;
+
+				&.item {
+					width: 80%;
+				}
+				&.value {
+					width: 20%;
+					text-align: right;
+				}
 			}
 		}
 	}
 
+	.note-symbol {
+		color:$c-main;
+		display: inline;
+		padding: 0 10px 0 5px;
+		font-size:.8em;
+		&.one:before {content:"I"};
+		&.two:before {content:"II"};
+		&.three:before {content:"III"};
+		&.four:before {content:"IIII"};
+		&.five:before {content:"IIIII"};
+	}
+
 	section.footer {
 		padding:0 0 5em;
-		width:100%;
 
 		.notes {
+			width:calc(100% - 200px);
 			float:left;
-			width:80%;
 
-			span.header {
-
+			h5 {
+				color:$c-main;
+				text-transform: uppercase;
+				font-weight: 600;
+				font-size: .6em;
+				letter-spacing: .5em;
+			}
+			ul {
+				font-size: .7em;
+				margin:0;
+				padding:0;
+				margin:0 0 0 -5px;
+				line-height: 2em;
+			}
+			li {
+				list-style: none;
 			}
 		}
 		.totals {
+			width:200px;
 			float:right;
-			width:20%;
+			font-size: .8em;
+			line-height: 2em;
 
 			table {
-				width:100%;
+
 			}
 		}
 	}

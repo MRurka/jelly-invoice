@@ -1,21 +1,21 @@
 
 @media print {
-  	
-  	header {
-  		display: none;
-  	}
-  	footer {
-  		display: none;
-  	}
 
-  	.print-btn {
-  		display: none;
-  	}
+    html, body {
+        width:100%;
+        height:100%;
+    }
 
-    .invoice section.footer {
-      position: fixed;
-      bottom:0;
-      padding:0 0 5em 0;
-      width:100%;
+    header,
+    footer,
+    .print-btn {
+        display: none;
+    }
+
+    .invoice-page section.footer {
+        position:absolute;
+        bottom:0;
+        padding:0 0 3em 0;
+        width:100%;
     }
 }
