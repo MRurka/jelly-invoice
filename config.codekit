@@ -158,13 +158,8 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-<<<<<<< HEAD
-	"\/_site\/img\/bg.jpg": {
-		"fileType": 16384,
-=======
 	"\/_site\/img\/logo.png": {
 		"fileType": 32768,
->>>>>>> master
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 19434,
@@ -183,8 +178,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-<<<<<<< HEAD
-=======
 	"\/_site\/js\/jquery-2.1.4.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -196,7 +189,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
->>>>>>> master
 	"\/_site\/README.md": {
 		"criticStyle": 0,
 		"enableFootnotes": 1,
@@ -290,15 +282,9 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-<<<<<<< HEAD
-		"initialSize": 85976,
-		"inputAbbreviatedPath": "\/img\/bg.jpg",
-		"outputAbbreviatedPath": "\/img\/bg.jpg",
-=======
 		"initialSize": 19434,
 		"inputAbbreviatedPath": "\/img\/logo.png",
 		"outputAbbreviatedPath": "\/img\/logo.png",
->>>>>>> master
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -312,8 +298,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-<<<<<<< HEAD
-=======
 	"\/js\/jquery-2.1.4.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -325,7 +309,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
->>>>>>> master
 	"\/README.md": {
 		"criticStyle": 0,
 		"enableFootnotes": 1,
@@ -422,7 +405,7 @@
 		"outputAbbreviatedPath": "\/css\/_invoice-page.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 3,
+		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
@@ -454,7 +437,7 @@
 		"outputAbbreviatedPath": "\/css\/_spreadsheet.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 3,
+		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
@@ -1138,7 +1121,7 @@
 	"sassCreateSourceMap": 0,
 	"sassDebugStyle": 0,
 	"sassDecimalPrecision": 10,
-	"sassOutputStyle": 3,
+	"sassOutputStyle": 0,
 	"sassUseLibsass": 0,
 	"shouldRunAutoprefixer": 0,
 	"shouldRunBless": 0,
