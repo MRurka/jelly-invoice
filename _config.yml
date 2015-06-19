@@ -9,8 +9,5 @@ business-number: "RUD3-551991"
 billing-address: "Michael Rurka <br>1991 November Dr <br>Suite 11-26 <br>Canada, NB <br>BN: RUD3-551991"
 email: michael@rurkadesign.com
 
-baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog/
-url: "http://mrurka.github.io/" # the base hostname & protocol for your site
-
-# Other
+# Optional
 tax: 0.13

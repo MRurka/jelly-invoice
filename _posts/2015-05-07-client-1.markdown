@@ -1,4 +1,5 @@
 ---
+
 layout: hourly
 tags: "2015"
 invoice-number: 555000
@@ -13,6 +14,7 @@ item_1: Watch Interface Design Title 1
 hours_1: 16
 
 item_2: Watch Interface Design Title 2
+note_2: Includes meetings from before
 hours_2: 12
 
 item_3: Watch Interface Design Title 3
