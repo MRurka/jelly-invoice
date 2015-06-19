@@ -13,7 +13,7 @@ After downloading Jelly, in Terminal, enter:
 
 #### Personalize Jelly
 - Populate the `_config.yml` file with your info. Changes to the `_config.yml` file require a fresh compile to update (re-do step 3, above).
-- Change the `logo.png` image in the img folder.
+- Change the `logo.png` image in the img folder. 
 
 
 #### Create an invoice
