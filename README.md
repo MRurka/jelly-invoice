@@ -5,15 +5,17 @@
 
 ## Launch Jelly
 1. Download Jelly
-2. `gem install jekyll` (Install Jekyll. If fails, use "sudo gem install jekyll")
-3. `cd path/to/jelly/folder`
-4. `jekyll serve --watch`
-5. Slap the generated sever address in a browser
+2. Open Terminal, enter: 
+3. `gem install jekyll` (If fails: try "sudo gem install jekyll")
+4. `cd path/to/jelly/folder`
+5. `jekyll serve --watch`
+6. Slap the generated sever address in a browser
+!(Launching Jelly, Terminal step-by-step view)[https://raw.githubusercontent.com/MRurka/jelly-invoice/gh-pages/img/jelly-tutorial/jelly-terminal.jpg]
 
 
 ## Personalize Jelly
 - Populate the `_config.yml` file with your info. Changes to the `_config.yml` file require a fresh compile to update (re-do step 3, above).
-- Change the `logo.png` image in the img folder.
+- Change the `logo.png` image in the img folder. 
 
 
 ## Create an invoice
