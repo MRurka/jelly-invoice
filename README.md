@@ -20,7 +20,7 @@ After downloading Jelly, in Terminal, enter:
 - Create a new file in the `_posts` directory. Name of file must follow format: `YEAR-MONTH-DAY-title.MARKUP`. Example: `2015-05-19-Special-Invoice-AB1234.markup`. See example file.
 
 **Reference list of default configurables for your invoice**
-```
+``` javascript
 layout: hourly _or_ fixed //hourly means the "rate:" AND "hours" configurables will need values. See them just below.
 date: 2015-11-26 //must be YYYY-MM-DD
 tags: 2015 //the invoice year
