@@ -4,11 +4,11 @@
 
 
 ## Launch Jelly
-After downloading Jelly, in Terminal, enter:  
-1. `gem install jekyll` (Install Jekyll. If fails, use "sudo gem install jekyll")
-2. `cd path/to/jelly/folder`
-3. `jekyll serve --watch`
-4. Slap the generated sever address in a browser
+1. Download Jelly
+2. `gem install jekyll` (Install Jekyll. If fails, use "sudo gem install jekyll")
+3. `cd path/to/jelly/folder`
+4. `jekyll serve --watch`
+5. Slap the generated sever address in a browser
 
 
 ## Personalize Jelly
@@ -41,4 +41,9 @@ price_X: 50 # Necessary only if the "layout:" value is "fixed"
 
 ## Create client profiles
 What? Why? So you won't have to re-enter client info per invoice. One time deal.
-- Create a new file in the `_data/clients` directory. File must be `.yml` file type. See example file.
+- Create a new `.yml` file in the `_data/clients` directory. See below and example files in folder.
+``` yaml
+username: googleinc
+name: Google Incorporated
+billing: "Google Incorporated <br>111 Richmond St W, <br>Toronto, Ontario, <br>Canada, M5H 2G4"
+```
