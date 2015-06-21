@@ -14,8 +14,22 @@
 
 
 ## Personalize Jelly
-- Populate the `_config.yml` file with your info. Changes to the `_config.yml` file require a fresh compile to update (re-do step 3, above).
 - Change the `logo.png` image in the img folder. 
+- Populate the `_config.yml` file with your info. Changes to the `_config.yml` file require a fresh compile to update (re-do step 3, above).
+``` yaml
+# Site settings
+title: Rude Invoicing # Site title, for your eyes only
+baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog. Necessary if hosting it online.
+url: "http://mrurka.github.io" # the base hostname & protocol for your site. Necessary if hosting it online. 
+
+# Business Info
+business-name: "Rurka Design" # necessary
+billing-address: "Michael Rurka <br>1991 November Dr <br>Suite 11-26 <br>Canada, NB <br>BN: RUD3-551991" #necessary
+email: michael@rurkadesign.com # optional
+
+# Optional
+tax: 0.13
+```
 
 
 ## Create an invoice
