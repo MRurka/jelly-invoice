@@ -16,11 +16,12 @@
 ## Personalize Jelly
 - Change the `logo.png` image in the img folder. 
 - Populate the `_config.yml` file with your info. Changes to the `_config.yml` file require a fresh compile to update (re-do step 3, above).
+
 ``` yaml
 # Site settings
-title: Rude Invoicing # Site title, for your eyes only
-baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog. Necessary if hosting it online.
-url: "http://mrurka.github.io" # the base hostname & protocol for your site. Necessary if hosting it online. 
+title: Jelly invoice
+baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog.
+url: "http://mrurka.github.io" # the base hostname & protocol for your site. 
 
 # Business Info
 business-name: "Jelly Invoice Inc."
@@ -63,3 +64,13 @@ username: google
 name: Google Incorporated
 billing: "Google Incorporated <br>111 Richmond St W, <br>Toronto, Ontario, <br>Canada, M5H 2G4"
 ```
+
+
+# Want to help?
+- JS: Prices need to display with commas and 2 decimal rounded (e.g. $1,500.00). Currently, only the decimals work.
+
+
+
+
+
+

@@ -3,11 +3,12 @@
 	padding:8em 0 5em 0;
 
 	.table-header {
-		width:100%;
+		width: 100%;
 		position: fixed;
-		top:6em;
-		padding: 1.2em 0 1em 0;
-		background: #2C303C;
+		top: 6.8em;
+		padding: 1.35em 0 1em 0;
+		background: #44A2ED;
+		border-bottom: 1px solid rgb(207, 207, 207);
 		transition: all .5s ease;
 
 		&.sticky {
@@ -30,21 +31,30 @@
 
 	th {
 		font-size: .6em;
-		color: #B5B5B5;
+		color: #fff;
 		text-transform: uppercase;
 		letter-spacing: 3px;
 		font-weight: 500;
 	}
 
 	td {
-		font-size: .85em;
+		font-size: .83em;
 		padding: 1em 0 0em 0;
-		color: #2D2D2D;
-		font-weight: 300;
+		color: #676767;
+		font-weight: 400;
 		letter-spacing: .5px;
 	}
 
 	a.print-btn {
 		cursor:pointer;
+
+		svg {
+			width: 15px;
+			fill: #48A7F2;
+			transition:all .25s ease;
+		}
+		&:hover svg {
+			fill:#8BCCFF;
+		}
 	}
 }

@@ -11,6 +11,8 @@ layout: default
 {% endcapture %}
 {% assign sortedtags = tags | split:' ' | sort: 'date' %}
 
+</ul>  
+
     <div class="table-header">
         <div class="container">
             <table>
@@ -35,13 +37,19 @@ layout: default
                         <td><h3 class="year" id="{{ tag }}">{{ tag }}</h3></td>
                     </tr>
                     {% for post in site.tags[tag] %} 
-                        <tr>
+                        <tr class="row client-{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.username }}">
                             <td class="date" width="15%">{{ post.date | date: "%b %-d, %Y" }}</td>
-                            <td class="client" width="20%">{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.name }}</td>
+                            <td class="client" width="20%"><!-- <a class="client-{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.username }}"> -->{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.name }}<!-- </a> --></td>
                             <td class="title" width="25%"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
                             <td class="total" width="15%" style="text-align:right" >$<span id="grand-total-{{ post.invoice-number }}"></span></td>
                             <td class="invoice" width="17%" style="text-align:right">{{ post.invoice-number }}</td>
-                            <td class="print" width="8%" style="text-align:right"><a class="print-btn" onclick="printPage('{{ post.url | prepend: site.baseurl }}');">PDF</a></td>
+                            <td class="print" width="8%" style="text-align:right">
+                                <a class="print-btn" onclick="printPage('{{ post.url | prepend: site.baseurl }}');">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 112 137.6" enable-background="new 0 0 112 137.6" xml:space="preserve">
+                                        <path id="blank-file-icon_1_" d="M111.9,33.7H78.3V0.1L111.9,33.7z M66.6,45.3V0H0v137.6h112V45.3H66.6z"/>
+                                    </svg>
+                                </a>
+                            </td>
                         </tr>
                         <script>
                             var total_1 = 0;
@@ -102,3 +110,28 @@ layout: default
         </div>
     </div>
 </div>
+<script>
+{% for tag in sortedtags %}
+    {% for post in site.tags[tag] %} 
+
+        // $('.table-body table td a.client-{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.username }}').click(function(){
+        //     $('.table-body table tr.row').hide();
+        //     $('.table-body table tr.row.client-{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.username }}').show();
+        //     $('.table-body table td a.client-{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.username }}').addClass('active');
+        // });
+
+        // $('.table-body table td a.client-{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.username }}.active').click(function(){
+        //     $('.table-body table tr.row').show();
+        // });
+
+    {% endfor %}
+{% endfor %}
+</script>
+
+
+
+
+
+
+
+

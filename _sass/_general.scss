@@ -5,8 +5,14 @@ body {
 	background: rgb(250, 251, 251);
 
 	a {
-		color:#03A9F4;
+		color:#44A2ED;
 		text-decoration: none;
+		cursor:pointer;
+		transition: all .3s ease;
+
+		&:hover {
+			color:#8BCCFF;
+		}
 	}
 	.container {
 		max-width:1100px;

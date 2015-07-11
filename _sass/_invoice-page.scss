@@ -8,15 +8,14 @@ $c-header-bg : rgb(44, 48, 60);
 	.print-btn {
 		position: absolute;
 		right: 8%;
-		color: #EF4A69;
 		background: none;
-		font-size: .65em;
-		top: 4em;
-		font-weight: 400;
-		text-transform: uppercase;
-		letter-spacing: 3px;
-		border: 1px solid #EF4A69;
-		padding: 12px 17px 10px;
+		top: 2.5em;
+		border:none;
+		padding: 5px;
+
+		img {
+			width:30px;
+		}
 	}
 
 	.container {
