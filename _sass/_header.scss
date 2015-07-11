@@ -1,26 +1,36 @@
 
 header {
+	position:fixed;
+	top:0;
 	width: 100%;
-	float:left;
-	padding:1em 0;
-	background: rgb(44, 48, 60);
-	border-bottom:1px solid rgb(87, 96, 119);
+	height: 4em;
+	padding:2em 0 1em 0;
+	background:#2C303C;
+	transition: all .5s ease;
+
+	&.sticky {
+		top:-7em;
+	}
 
 	.logo { 
 		float:left;
-		svg {
-			fill:#EF4A69;
-			width:70px;
-			margin:10px 0 0 0;
+		img {
+			width: 40px;
+			height: auto;
+			margin: .45em 0 0 0;
+			background-color: #fff;
 		}
 	}
+
 	h1 {
 		float: left;
-		font-size: 1.3em;
+		font-size: .9em;
 		text-transform: uppercase;
-		font-weight: 300;
-		color: #636B71;
-		letter-spacing: 0.2em;
+		color: #fff;
+		letter-spacing: 5px;
+		padding: 0 0 0 13px;
+		font-weight: 400;
+		margin: 21px 0 0 0;
 
 		span {
 			font-weight: 300;
@@ -42,4 +52,8 @@ header {
 		border: 2px solid rgb(41, 171, 229);
 		padding: 10px 17px 8px;
 	}
+}
+
+body.post-layout header {
+	position: relative;
 }

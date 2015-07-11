@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 ---
 
 <div class="invoice-page">
@@ -108,18 +108,20 @@ layout: default
                         </script>
                     </tr>
                     <tr>
-                        <td><b>HST (13%)</b></td>
-                        <td style="text-align:right;">$<span id="tax"></span></td>
+                        <td><b>{{ site.tax-label }} (<span id="tax-percentage"></span>%)</b></td>
+                        <td style="text-align:right;">$<span id="tax-amount"></span></td>
                         <script> 
-                            var tax = subtotal * {{ site.tax }}; 
-                            document.getElementById("tax").innerHTML = tax.toFixed(2);
+                            var tax_percentage = {{ site.tax-amount }} * 100;
+                            var tax_amount = subtotal * {{ site.tax-amount }};
+                            document.getElementById("tax-percentage").innerHTML = tax_percentage;
+                            document.getElementById("tax-amount").innerHTML = tax_amount.toFixed(2);
                         </script>
                     </tr>
                     <tr>
                         <td><b>Grand Total</b></td>
                         <td style="text-align:right;">$<span id="grand-total"></span></td>
                         <script> 
-                            var grand_total = subtotal + tax; 
+                            var grand_total = subtotal + tax_amount; 
                             document.getElementById("grand-total").innerHTML = grand_total.toFixed(2);
                         </script>
                     </tr>

@@ -1,3 +1,6 @@
+# 
+# THIS IS PLUGIN NECESSARY FOR SORTING THE INVOICES BY YEAR, VIA TAGS, ON THE INDEX PAGE
+# 
 module Jekyll
   class TagIndex < Page
     def initialize(site, base, dir, tag)

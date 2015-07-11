@@ -1,13 +1,12 @@
 # Site settings
-title: Rude Invoicing
-baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog
-url: "http://mrurka.github.io" # the base hostname & protocol for your site
+title: "Jelly Invoice" # Site title, for your eyes only
+baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog. Necessary if hosting it online.
+url: "http://mrurka.github.io" # the base hostname & protocol for your site. Necessary if hosting it online. 
 
 # Business Info
-business-name: "Rurka Design"
-business-number: "RUD3-551991"
-billing-address: "Michael Rurka <br>1991 November Dr <br>Suite 11-26 <br>Canada, NB <br>BN: RUD3-551991"
-email: michael@rurkadesign.com
+business-name: "Jelly Invoice Inc."
+billing-address: "Name <br>555 Infinite Drive <br>ON, Canada <br>BN: RUD3-551991"
 
-# Optional
-tax: 0.13
+# Other 
+tax-amount: "0.13" # Must be 0.00 format
+tax-label: "Tax" # This appears on your invoices as "Tax (13%)"

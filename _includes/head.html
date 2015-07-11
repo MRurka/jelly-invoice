@@ -7,15 +7,13 @@
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ "/css/master.css" | prepend: site.baseurl }}">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-	<link href='http://fonts.googleapis.com/css?family=Roboto:500,900,300,700,400' rel='stylesheet' type='text/css'>
 	<script src="{{ "/js/jquery-2.1.4.min.js" | prepend: site.baseurl }}"></script>
 	<script type="text/javascript">
 	
 		// Print External Page PDF
-
+		//
 		function closePrint () {
 		  document.body.removeChild(this.__container__);
 		}
@@ -36,5 +34,19 @@
 		  oHiddFrame.src = sURL;
 		  document.body.appendChild(oHiddFrame);
 		}
+
+
+		// This is for the sticky header, on the index
+		//
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 30){  
+			    $('body.default-layout .index-content .table-header').addClass("sticky");
+			    $('body.default-layout header').addClass("sticky");
+			  }
+			  else{
+			    $('body.default-layout .index-content .table-header').removeClass("sticky");
+			    $('body.default-layout header').removeClass("sticky");
+			  }
+			});
 	</script>
 </head>

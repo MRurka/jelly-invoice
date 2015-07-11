@@ -3,7 +3,6 @@ layout: default
 ---
 
 <div class="index-content">
-    <div class="container">
 
 {% capture tags %}
     {% for tag in site.tags %}
@@ -12,83 +11,94 @@ layout: default
 {% endcapture %}
 {% assign sortedtags = tags | split:' ' | sort: 'date' %}
 
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Client</th>
-                <th>Work</th>
-                <th style="text-align:right">Grand Total</th>
-                <th style="text-align:right">Invoice #</th>
-                <th  style="text-align:right">Export</th>
-            </tr>
-            {% for tag in sortedtags %}
+    <div class="table-header">
+        <div class="container">
+            <table>
                 <tr>
-                    <td><h3 class="year" id="{{ tag }}">{{ tag }}</h3></td>
+                    <th width="15%">Date</th>
+                    <th width="20%">Client</th>
+                    <th width="25%">Work</th>
+                    <th width="15%" style="text-align:right">Grand Total</th>
+                    <th width="17%" style="text-align:right">Invoice #</th>
+                    <th width="8%" style="text-align:right">Export</th>
                 </tr>
-                {% for post in site.tags[tag] %} 
+            </table>
+        </div>
+    </div>
+
+    <div class="table-body">
+        <div class="container">
+
+            <table>
+                {% for tag in sortedtags %}
                     <tr>
-                        <td class="date">{{ post.date | date: "%b %-d, %Y" }}</td>
-                        <td class="client">{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.name }}</td>
-                        <td class="title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
-                        <td style="text-align:right"class="total">$<span id="grand-total-{{ post.invoice-number }}"></span></td>
-                        <td style="text-align:right"class="invoice">{{ post.invoice-number }}</td>
-                        <td style="text-align:right"><a class="print-btn" onclick="printPage('{{ post.url | prepend: site.baseurl }}');">PDF</a></td>
+                        <td><h3 class="year" id="{{ tag }}">{{ tag }}</h3></td>
                     </tr>
-                    <script>
-                        var total_1 = 0;
-                        var total_2 = 0;
-                        var total_3 = 0;
-                        var total_4 = 0;
-                        var total_5 = 0;
-                        var tax = 1 + {% if site.tax %}{{ site.tax }}{% endif %};
+                    {% for post in site.tags[tag] %} 
+                        <tr>
+                            <td class="date" width="15%">{{ post.date | date: "%b %-d, %Y" }}</td>
+                            <td class="client" width="20%">{% assign client-id = site.data.clients[post.client-id] %}{{ client-id.name }}</td>
+                            <td class="title" width="25%"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></td>
+                            <td class="total" width="15%" style="text-align:right" >$<span id="grand-total-{{ post.invoice-number }}"></span></td>
+                            <td class="invoice" width="17%" style="text-align:right">{{ post.invoice-number }}</td>
+                            <td class="print" width="8%" style="text-align:right"><a class="print-btn" onclick="printPage('{{ post.url | prepend: site.baseurl }}');">PDF</a></td>
+                        </tr>
+                        <script>
+                            var total_1 = 0;
+                            var total_2 = 0;
+                            var total_3 = 0;
+                            var total_4 = 0;
+                            var total_5 = 0;
+                            var tax = 1 + {% if site.tax-amount %}{{ site.tax-amount }}{% endif %};
 
-                        {% if post.item_1 %} total_1 = 
-                            ( 
+                            {% if post.item_1 %} total_1 = 
                                 ( 
-                                    {% if post.price_1 %} + ({{ post.price_1 }}) {% endif %} 
-                                    {% if post.hours_1 %} + ({{ post.hours_1 }}*{{ post.rate }}) {% endif %} 
-                                ) * tax 
-                            ); 
-                        {% endif %}
-                        {% if post.item_2 %} total_2 = 
-                            ( 
+                                    ( 
+                                        {% if post.price_1 %} + ({{ post.price_1 }}) {% endif %} 
+                                        {% if post.hours_1 %} + ({{ post.hours_1 }}*{{ post.rate }}) {% endif %} 
+                                    ) * tax 
+                                ); 
+                            {% endif %}
+                            {% if post.item_2 %} total_2 = 
                                 ( 
-                                    {% if post.price_2 %} + ({{ post.price_2 }}) {% endif %} 
-                                    {% if post.hours_2 %} + ({{ post.hours_2 }}*{{ post.rate }}) {% endif %} 
-                                ) * tax 
-                            ); 
-                        {% endif %}
-                        {% if post.item_3 %} total_3 = 
-                            ( 
+                                    ( 
+                                        {% if post.price_2 %} + ({{ post.price_2 }}) {% endif %} 
+                                        {% if post.hours_2 %} + ({{ post.hours_2 }}*{{ post.rate }}) {% endif %} 
+                                    ) * tax 
+                                ); 
+                            {% endif %}
+                            {% if post.item_3 %} total_3 = 
                                 ( 
-                                    {% if post.price_3 %} + ({{ post.price_3 }}) {% endif %} 
-                                    {% if post.hours_3 %} + ({{ post.hours_3 }}*{{ post.rate }}) {% endif %} 
-                                ) * tax 
-                            ); 
-                        {% endif %}
-                        {% if post.item_4 %} total_4 = 
-                            ( 
+                                    ( 
+                                        {% if post.price_3 %} + ({{ post.price_3 }}) {% endif %} 
+                                        {% if post.hours_3 %} + ({{ post.hours_3 }}*{{ post.rate }}) {% endif %} 
+                                    ) * tax 
+                                ); 
+                            {% endif %}
+                            {% if post.item_4 %} total_4 = 
                                 ( 
-                                    {% if post.price_4 %} + ({{ post.price_4 }}) {% endif %} 
-                                    {% if post.hours_4 %} + ({{ post.hours_4 }}*{{ post.rate }}) {% endif %} 
-                                ) * tax 
-                            ); 
-                        {% endif %}
-                        {% if post.item_5 %} total_5 = 
-                            ( 
+                                    ( 
+                                        {% if post.price_4 %} + ({{ post.price_4 }}) {% endif %} 
+                                        {% if post.hours_4 %} + ({{ post.hours_4 }}*{{ post.rate }}) {% endif %} 
+                                    ) * tax 
+                                ); 
+                            {% endif %}
+                            {% if post.item_5 %} total_5 = 
                                 ( 
-                                    {% if post.price_5 %} + ({{ post.price_5 }}) {% endif %} 
-                                    {% if post.hours_5 %} + ({{ post.hours_5 }}*{{ post.rate }}) {% endif %} 
-                                ) * tax 
-                            ); 
-                        {% endif %}
+                                    ( 
+                                        {% if post.price_5 %} + ({{ post.price_5 }}) {% endif %} 
+                                        {% if post.hours_5 %} + ({{ post.hours_5 }}*{{ post.rate }}) {% endif %} 
+                                    ) * tax 
+                                ); 
+                            {% endif %}
 
-                        var grand_total = total_1 + total_2 + total_3 + total_4 + total_5;
+                            var grand_total = total_1 + total_2 + total_3 + total_4 + total_5;
 
-                        document.getElementById('grand-total-{{ post.invoice-number }}').innerHTML = grand_total.toFixed(2);
-                    </script>
+                            document.getElementById('grand-total-{{ post.invoice-number }}').innerHTML = grand_total.toFixed(2);
+                        </script>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
-        </table> 
-    </div> 
+            </table>
+        </div>
+    </div>
 </div>

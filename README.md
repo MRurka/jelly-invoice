@@ -10,7 +10,7 @@
 4. `cd path/to/jelly/folder`
 5. `jekyll serve --watch`
 6. Slap the generated sever address in a browser
-![Launching Jelly, Terminal step-by-step view](https://raw.githubusercontent.com/MRurka/jelly-invoice/gh-pages/img/jelly-tutorial/jelly-terminal.jpg)
+![Launching Jelly, Terminal step-by-step view](https://raw.githubusercontent.com/MRurka/jelly-invoice/gh-pages/img/terminal-example.jpg)
 
 
 ## Personalize Jelly
