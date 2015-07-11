@@ -23,12 +23,12 @@ baseurl: "/jelly-invoice" # the subpath of your site, e.g. /blog. Necessary if h
 url: "http://mrurka.github.io" # the base hostname & protocol for your site. Necessary if hosting it online. 
 
 # Business Info
-business-name: "Rurka Design" # necessary
-billing-address: "Michael Rurka <br>1991 November Dr <br>Suite 11-26 <br>Canada, NB <br>BN: RUD3-551991" #necessary
-email: michael@rurkadesign.com # optional
+business-name: "Jelly Invoice Inc."
+billing-address: "Name <br>555 Infinite Drive <br>ON, Canada <br>BN: RUD3-551991"
 
-# Optional
-tax: 0.13
+# Other
+tax-amount: 0.13
+tax-label: Tax
 ```
 
 
@@ -59,7 +59,7 @@ price_X: 50 # Necessary only if the "layout:" value is "fixed"
 What? Why? So you won't have to re-enter client info per invoice. One time deal.
 - Create a new `.yml` file in the `_data/clients` directory. See below and example files in folder.
 ``` yaml
-username: googleinc
+username: google
 name: Google Incorporated
 billing: "Google Incorporated <br>111 Richmond St W, <br>Toronto, Ontario, <br>Canada, M5H 2G4"
 ```
