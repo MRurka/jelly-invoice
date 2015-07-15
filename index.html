@@ -5,7 +5,7 @@ layout: default
 <div class="index-content">
 
 {% capture tags %}
-    {% for tag in site.tags %}
+    {% for tag in site.tags reversed %}
         {{ tag[0] }}
     {% endfor %}
 {% endcapture %}
