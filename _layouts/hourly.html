@@ -124,7 +124,7 @@ layout: post
                         <td style="text-align:right;">$<span id="grand-total"></span></td>
                         <script> 
                             var grand_total = subtotal + tax_amount; 
-                            document.getElementById("grand-total").innerHTML = grand_total.toFixed(2);
+                            document.getElementById("grand-total").innerHTML = grand_total.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});
                         </script>
                     </tr>
                 </table>

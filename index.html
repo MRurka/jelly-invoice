@@ -102,7 +102,7 @@ layout: default
 
                             var grand_total = total_1 + total_2 + total_3 + total_4 + total_5;
 
-                            document.getElementById('grand-total-{{ post.invoice-number }}').innerHTML = grand_total.toFixed(2);
+                            document.getElementById('grand-total-{{ post.invoice-number }}').innerHTML = grand_total.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});
                         </script>
                     {% endfor %}
                 {% endfor %}
