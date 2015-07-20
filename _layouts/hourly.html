@@ -42,7 +42,7 @@ layout: post
                         <td class="item">{{ page.item_1 }} {% if page.note_1 %}<sup class="note-symbol one"></sup>{% endif %}</td>
                         <td class="hours">{{ page.hours_1 }}</td>
                         <td class="value"><span id="total-1"></span></td>
-                        <script> var total_1 = {{ page.rate }} * {{ page.hours_1 }} ; document.getElementById("total-1").innerHTML = total_1;</script>
+                        <script> var total_1 = {{ page.rate }} * {{ page.hours_1 }} ; document.getElementById("total-1").innerHTML = total_1.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});</script>
                     </tr>
                 {% endif %}
                 {% if page.item_2 %}
@@ -50,7 +50,7 @@ layout: post
                         <td class="item">{{ page.item_2 }} {% if page.note_2 %}<sup class="note-symbol two"></sup>{% endif %}</td>
                         <td class="hours">{{ page.hours_2 }}</td>
                         <td class="value"><span id="total-2"></span></td>
-                        <script> var total_2 = {{ page.rate }} * {{ page.hours_2 }} ; document.getElementById("total-2").innerHTML = total_2;</script>
+                        <script> var total_2 = {{ page.rate }} * {{ page.hours_2 }} ; document.getElementById("total-2").innerHTML = total_2.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});</script>
                     </tr>
                 {% endif %}
                 {% if page.item_3 %}
@@ -58,7 +58,7 @@ layout: post
                         <td class="item">{{ page.item_3 }} {% if page.note_3 %}<sup class="note-symbol three"></sup>{% endif %}</td>
                         <td class="hours">{{ page.hours_3 }}</td>
                         <td class="value"><span id="total-3"></span></td>
-                        <script> var total_3 = {{ page.rate }} * {{ page.hours_3 }} ; document.getElementById("total-3").innerHTML = total_3;</script>
+                        <script> var total_3 = {{ page.rate }} * {{ page.hours_3 }} ; document.getElementById("total-3").innerHTML = total_3.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});</script>
                     </tr>
                 {% endif %}
                 {% if page.item_4 %}
@@ -66,7 +66,7 @@ layout: post
                         <td class="item">{{ page.item_4 }} {% if page.note_4 %}<sup class="note-symbol four"></sup>{% endif %}</td>
                         <td class="hours">{{ page.hours_4 }}</td>
                         <td class="value"><span id="total-4"></span></td>
-                        <script> var total_4 = {{ page.rate }} * {{ page.hours_4 }} ; document.getElementById("total-4").innerHTML = total_4;</script>
+                        <script> var total_4 = {{ page.rate }} * {{ page.hours_4 }} ; document.getElementById("total-4").innerHTML = total_4.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});</script>
                     </tr>
                 {% endif %}
                 {% if page.item_5 %}
@@ -74,7 +74,7 @@ layout: post
                         <td class="item">{{ page.item_5 }} {% if page.note_5 %}<sup class="note-symbol five"></sup>{% endif %}</td>
                         <td class="hours">{{ page.hours_5 }}</td>
                         <td class="value"><span id="total-5"></span></td>
-                        <script> var total_5 = {{ page.rate }} * {{ page.hours_5 }} ; document.getElementById("total-5").innerHTML = total_5;</script>
+                        <script> var total_5 = {{ page.rate }} * {{ page.hours_5 }} ; document.getElementById("total-5").innerHTML = total_5.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});</script>
                     </tr>
                 {% endif %}
             </table>
@@ -106,7 +106,7 @@ layout: post
                             {% if page.item_3 %} + total_3 {% endif %}  
                             {% if page.item_4 %} + total_4 {% endif %}  
                             {% if page.item_5 %} + total_5 {% endif %}; 
-                            document.getElementById("subtotal").innerHTML = subtotal.toFixed(2);
+                            document.getElementById("subtotal").innerHTML = subtotal.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});
                         </script>
                     </tr>
                     <tr>
@@ -116,7 +116,7 @@ layout: post
                             var tax_percentage = {{ site.tax-amount }} * 100;
                             var tax_amount = subtotal * {{ site.tax-amount }};
                             document.getElementById("tax-percentage").innerHTML = tax_percentage;
-                            document.getElementById("tax-amount").innerHTML = tax_amount.toFixed(2);
+                            document.getElementById("tax-amount").innerHTML = tax_amount.toLocaleString('USD',{minimumFractionDigits: 2, maximumFractionDigits: 2});
                         </script>
                     </tr>
                     <tr>
